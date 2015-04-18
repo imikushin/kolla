@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 #
 # This script can be used to pull all of the docker images for the
 # containers that compose Kolla.  This is primarily used to update
@@ -39,35 +40,18 @@ case "$1" in
 esac
 
 # Move to top level directory
-REAL_PATH=$(python -c "import os,sys;print os.path.realpath('$0')")
-cd "$(dirname "$REAL_PATH")/.."
+cd $(dirname $0)/..
 
 if [[ "${PULL_TOOL}" == 'compose' ]]; then
 
     echo Pulling with docker-compose.
-    echo Pulling rabbitmq.
-    docker-compose -f ./compose/rabbitmq.yml pull
 
-    echo Pulling mariadb.
-    docker-compose -f ./compose/mariadb.yml pull
+    for f in ./compose/*.yml; do
+        echo
+        echo Pulling images for ${f}
+        docker-compose -f ${f} pull && :
+    done
 
-    echo Pulling keystone.
-    docker-compose -f ./compose/keystone.yml pull
-
-    echo Pulling glance.
-    docker-compose -f ./compose/glance-api-registry.yml pull
-
-    echo Pulling nova controller.
-    docker-compose -f ./compose/nova-api-conductor-scheduler.yml pull
-
-    echo Pulling nova compute with nova networking.
-    docker-compose -f ./compose/nova-compute-network.yml pull
-
-    echo Pulling heat.
-    docker-compose -f ./compose/heat-api-engine.yml pull
-
-    echo Pulling Horizon.
-    docker-compose -f ./compose/horizon.yml pull
 fi
 
 if [[ "${PULL_TOOL}" == 'docker' ]]; then
