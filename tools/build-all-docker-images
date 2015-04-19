@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Depends on bash 4 and gawk
 
 TOPDIR=$(git rev-parse --show-toplevel)
