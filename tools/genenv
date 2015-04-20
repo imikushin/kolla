@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 #
 # This script generates a minimal set of environment variables to allow
 # the openstack containers to operate.  It is creating a configuration
@@ -7,8 +8,7 @@
 # It also creates a suitable 'openrc' for use with the installed system.
 
 # Move to top level directory
-REAL_PATH=$(python -c "import os,sys;print os.path.realpath('$0')")
-cd "$(dirname "$REAL_PATH")/.."
+cd $(dirname $0)/..
 
 MY_IP=$(ip route get $(ip route | awk '$1 == "default" {print $3}') |
     awk '$4 == "src" {print $5}')
