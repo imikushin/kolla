@@ -1,5 +1,5 @@
 horizon:
-  image: kollaglue/centos-rdo-horizon
+  image: imikushin/horizon-ubuntu
   name: horizon
   net: "host"
   restart: always
