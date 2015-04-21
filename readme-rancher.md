@@ -46,7 +46,7 @@ sed -i.bak "s/${MY_IP}/${NODE_01_IP}/" ./openrc
 
 ### start-rabbitmq
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/rabbitmq.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/rabbitmq.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed. 
@@ -55,7 +55,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-mariadb
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/mariadb.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/mariadb.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -65,7 +65,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-keystone
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/keystone.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/keystone.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -74,7 +74,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-glance-api-registry
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/glance-api-registry.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/glance-api-registry.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -84,7 +84,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-nova-api-conductor-scheduler
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/nova-api-conductor-scheduler.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/nova-api-conductor-scheduler.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -95,7 +95,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-nova-compute
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/nova-compute.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/nova-compute.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -106,7 +106,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-neutron-server
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/neutron-server.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/neutron-server.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -115,7 +115,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-neutron-agents
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/neutron-agents.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/neutron-agents.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -124,7 +124,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-heat-api-engine
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/heat-api-engine.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/heat-api-engine.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -134,7 +134,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-horizon
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/horizon.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/horizon.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -177,7 +177,7 @@ sed -i.bak "s/${MY_IP}/${NODE_01_IP}/" ./openrc
 
 ### start-nova-compute
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/nova-compute.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/nova-compute.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
@@ -188,7 +188,7 @@ After this container has stopped, it's no longer needed.
 
 ### start-neutron-agents
 - Image: `imikushin/compose`
-- Commmand: `-f /usr/local/src/kolla/compose/neutron-agents.yml up -d`
+- Command: `-f /usr/local/src/kolla/compose/neutron-agents.yml up -d`
 - Volumes From: `bootstrap-files`
 
 After this container has stopped, it's no longer needed.
